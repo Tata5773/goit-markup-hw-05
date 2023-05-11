@@ -105,7 +105,7 @@ img {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  text-decoration: none;
+  display: block;
   color: var(--header-list-item);
   padding: 24px 0;
   color: #404bbf;
@@ -508,8 +508,8 @@ img {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-item-link:hover,
-.portfolio-item-link:focus {
+.portfolio-item-link:hover .overlay-text,
+.portfolio-item-link:focus .overlay-text {
   transform: translateY(0);
 
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -672,6 +672,9 @@ img {
   height: 100%;
   top: 0;
   left: 0;
+  transform: translate(-50%, -50%);
+  min-width: 408px;
+  min-height: 576px;
 
   background-color: #2e2f4266;
   backdrop-filter: blur(2px);
@@ -690,9 +693,6 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 408px;
-  min-height: 576px;
 
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
