@@ -108,6 +108,7 @@ img {
   text-decoration: none;
   color: var(--header-list-item);
   padding: 24px 0;
+  color: #404bbf;
 
   transition: color var(--anim-fast);
 }
@@ -124,12 +125,12 @@ img {
   content: "";
 
   position: absolute;
-  bottom: 15px;
+  bottom: 2px;
   left: 0;
   width: 100%;
   height: 4px;
   display: block;
-  border-radius: 4px;
+  border-radius: -1px;
 }
 
 .header-list-item.active::after {
@@ -211,7 +212,7 @@ img {
   margin-top: 48px;
   box-shadow: 0px 4px 4px 0px #00000026;
 
-  transition: color var(--anim-fast), background-color var(--anim-fast);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn:hover,
@@ -392,8 +393,7 @@ img {
   background-color: #4d5ae5;
   border-radius: 50%;
 
-  transition: background-color var(--anim-fast),
-    background-color var(--anim-fast);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-icon {
@@ -433,6 +433,10 @@ img {
   padding: 12px 24px;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn:hover,
@@ -442,7 +446,6 @@ img {
   border: 1px solid transparent;
   box-shadow: 0px 3px 1px rgb(0, 0, 0, 0.1), 0px 2px 1px rgb(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: color var(--anim-fast), background-color var(--anim-fast);
 }
 
 .customers {
@@ -472,7 +475,8 @@ img {
   display: flex;
   color: #8e8f99;
 
-  transition: color var(--anim-fast), color var(--anim-fast);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-icon {
@@ -498,10 +502,12 @@ img {
 .portfolio-item-link {
   text-decoration: none;
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item-link:hover,
 .portfolio-item-link:focus {
+  transform: translateY(0%);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
@@ -516,15 +522,7 @@ img {
   top: 0;
   left: 0;
 
-  transform: translateY(100%);
-
-  width: 100%;
-  height: 100%;
-  padding: 40px 32px;
-
-  background-color: #4d5ae5;
   backdrop-filter: blur(2px);
-  transition: transform var(--anim-fast);
 }
 
 .section-li:hover .overlay {
@@ -532,7 +530,20 @@ img {
 }
 
 .overlay-text {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   color: #f4f4fd;
+  padding: 40px 32px;
+  background-color: #4d5ae5;
+
+  width: 100%;
+  height: 100%;
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .work-portfolio {
@@ -667,6 +678,8 @@ img {
   background-color: #2e2f4266;
   backdrop-filter: blur(2px);
   z-index: var(--modal-idx);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
@@ -677,21 +690,24 @@ img {
 
 .modal {
   position: absolute;
-  top: calc(50%);
-  left: calc(50%);
-  transform: translateX(-50%), translateY(-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
 
   width: 408px;
-  height: 584px;
+  height: 576px;
 
-  background-color: #ffffff;
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn-close {
   position: absolute;
-  top: -12px;
-  right: -12px;
+  top: 24px;
+  right: 24px;
 
   display: flex;
   align-items: center;
@@ -701,11 +717,26 @@ img {
   height: 24px;
   padding: 0;
 
-  border-radius: 50%;
+  border-radius: 1px solid rgba(0, 0, 0, 0.1);
   border: none;
-  background-color: #e7e9fc;
+  background-color: #404bbf;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn-close :hover,
+.modal-btn-close :focus {
+  background-color: #404bbf;
+  border: none;
 }
 
 .modal-icon-close {
   fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-icon-close :hover,
+.modal-icon-close :focus {
+  fill: #ffffff;
 }
