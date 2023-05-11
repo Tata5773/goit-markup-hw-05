@@ -135,6 +135,8 @@ img {
 
 .header-list-item.active::after {
   background-color: #404bbf;
+  bottom: -1px;
+  border-radius: 2px;
 }
 
 .header-link:hover,
@@ -671,11 +673,10 @@ img {
 .backdrop {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
 
   background-color: #2e2f4266;
   backdrop-filter: blur(2px);
@@ -692,11 +693,9 @@ img {
 
 .modal {
   position: absolute;
-
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-
   width: 408px;
   min-height: 576px;
 
@@ -711,16 +710,14 @@ img {
   position: absolute;
   top: 24px;
   right: 24px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 50%;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  padding: 0;
-
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #e7e9fc;
 
@@ -728,12 +725,12 @@ img {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-btn-close :hover {
+.modal-btn-close:hover {
   background-color: #404bbf;
   border: none;
 }
 
-.modal-btn-close :focus {
+.modal-btn-close:focus {
   background-color: #404bbf;
   border: none;
 }
@@ -743,7 +740,7 @@ img {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-icon-close :hover,
-.modal-icon-close :focus {
+.modal-icon-close:hover,
+.modal-icon-close:focus {
   fill: #ffffff;
 }
