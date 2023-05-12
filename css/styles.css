@@ -38,7 +38,6 @@ img {
 }
 
 .header {
-  position: fixed;
   top: 0;
   z-index: var(--header-idx);
 
@@ -97,6 +96,7 @@ img {
   display: flex;
   gap: 40px;
   list-style: none;
+  color: #2e2f42;
 }
 
 .header-list-item {
@@ -108,7 +108,6 @@ img {
   display: block;
   color: var(--header-list-item);
   padding: 24px 0;
-  color: #404bbf;
 
   transition: color var(--anim-fast);
 }
@@ -136,6 +135,10 @@ img {
 
 .header-list-item.active::after {
   background-color: #404bbf;
+}
+
+.header-list-item.active {
+  color: #404bbf;
 }
 
 .header-link:hover,
